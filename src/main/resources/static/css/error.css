@@ -1,0 +1,62 @@
+@charset "ISO-8859-1";
+* {
+    box-sizing: border-box;
+}
+
+
+
+.errorimg{
+	position:relative;
+	justify-content:center; 
+	align-items: center;
+	margin-top: 11%;
+	left:35%;
+}
+
+.errorimg img{
+	width: 400px;
+}
+.errorcontent{
+
+	position:absolute;
+	left:35%;
+	margin-top:20px;
+	font-family:  'Josefin Sans', sans-serif;
+	
+}
+
+.errorcontent h1{
+	margin-left:20px;
+	letter-spacing: 3px;
+}
+
+.errorcontent p{
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	
+	background: linear-gradient(to right, red 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+   
+}
+
+.errorcontent a{
+	
+	display: block;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	background-image: linear-gradient(to right,#32be8f,#38d39f,#32be8f);
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
+	padding: 12px;
+	border-radius: 18px;
+	background-size: 200%;
+		transition:.5s;
+		letter-spacing: 4px;
+}
+.errorcontent a:hover {
+	background-position: right;
+}

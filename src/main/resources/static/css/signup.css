@@ -1,0 +1,153 @@
+@charset "ISO-8859-1";
+@import
+	url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fuggles&family=Pacifico&display=swap')
+	;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,600;1,700;1,800;1,900&display=swap')
+	;
+
+
+.lost{
+		position: fixed;
+	height: 100%;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+.signup-img{
+	display: flex;
+	justify-content:center; 
+	align-items: center;
+	
+}
+
+
+.signup-img img{
+	width: 400px;
+
+	
+}
+
+.Lgman{
+	position: fixed;
+	margin-bottom: 10px;
+}
+.signup-container{
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.signup-form h2 {
+	font-size: 30px;
+	text-transform: uppercase;
+	color: #D3D3D3;
+	font-weight: 600;
+	
+}
+
+.signup-form{
+	position:fixed;
+width: 300px;	
+top:20%;
+margin-left: 80px;
+
+
+
+}
+.sgnup-i{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.check-in{
+	display: flex;
+	justify-content: flex-start;
+
+}
+.check-in input{
+	margin-right: 10px;
+	margin-top: 2px;
+	width: 15px;
+	height: 15px;
+	
+	
+}
+.check-in input:checked+label{
+	color:   #1a75ff;
+}
+
+.check-in label{
+	font-size: 12px;
+	font-weight: 600;
+	color: #999;
+	line-height: 20px;
+}
+
+.invalid-feedback{
+	display: flex;
+	margin-left: 100px;
+	font-size: 10px;
+	font-weight: bold;
+}
+.signup-a{
+	display: flex;
+	align-items: flex-start;
+	font-weight: 600;
+	font-size: 12px;
+	line-height:25px;
+	color: #999;
+}
+.signup-a i{
+	margin-right: 10px;
+	margin-top: 5px;
+}
+.signup-a:hover,.signup-a i:hover{
+	color: #38d39f;
+}
+
+
+
+.alert{
+	border: none;
+	background: none;
+	display:flex;
+		align-items: flex-start;
+		
+}
+.alert p{
+	font-size: 10px;
+	color: red;
+	font-weight: bold;
+	width: 500px;
+
+}
+
+@media screen and (max-width:1000px){
+	.signup-img{
+	display: none;
+	}
+	.container{
+	grid-template-columns:1fr;
+	}
+	.wave{
+	display: none;
+	}
+	.login-container{
+	
+	justify-content: center;
+	}
+}
+
+
+
+
+
+
+

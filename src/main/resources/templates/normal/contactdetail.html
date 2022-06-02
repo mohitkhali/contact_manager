@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+<section>
+<div class="heading">
+<h2><i class="fa fa-user"></i>User profile</h2>
+</div>
+<div class="details-img">
+	<img src="/images/nature.svg" alt="" />
+	</div>
+
+	<div class="wrapper">
+
+	<div class="left">
+	<img src="" alt="user" th:src="@{'/images/'+${contact.image}}" width="200"/>
+	<h4 th:text="${contact.name}"></h4>
+	<p th:text="${contact.description}"></p>
+</div>
+<div class="right">
+
+
+				<div class="info">
+					<h3>Information</h3>
+					<div class="info_data">
+						<div class="data">
+							<h4><i class="fas fa-envelope-square "></i>Email</h4>
+							<p th:text="${contact.email}"></p>
+						</div>
+						<div class="data">
+							<h4><i class="fas fa-phone-square-alt"></i>Phone</h4>
+							<p th:text="${contact.phone}"></p>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="moreinfo">
+					<h3>More info</h3>
+					<div class="moreinfo_data">
+						<div class="data">
+							<h4><i class="fas fa-yin-yang"></i>Nickname</h4>
+							<p th:text="${contact.secondName}"></p>
+						</div>
+						<div class="data">
+							<h4><i class="fas fa-briefcase"></i>Work</h4>
+							<p th:text="${contact.work}"></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="cdbuttons">
+					
+					<form method="post" th:action="@{'/user/updatecontact/'+${contact.cId}}" >
+					<button  class="btn btn-outline-primary" id="button1" type="submit" >UPDATE</button>
+					</form>
+					<a   href="#" th:onclick="|deletecontact(${contact.cId})|" ><button type="button" class="btn btn-outline-danger">Delete</button></a>
+				
+				</div>
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
+	
+	</div>
+	
+
+	</section>
+
+
+</body>

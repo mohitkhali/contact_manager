@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Settings</title>
+</head>
+<body>
+
+<section>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+
+<div class="card setting-card">
+
+<div class="card-body">
+<form th:action="@{/user/change-password}"   method="POST"  class="login-form">
+<img src="/images/profile.svg" alt="" class="setting-avtar" />
+<h3>Change Password</h3>
+<div class="input-div one ">
+<div class="login-i">
+<i class="fas fa-lock"></i>
+</div>
+<div>
+<h5>Oldpassword</h5>
+<input type="password" class="login-input " name="oldpass" />
+</div>
+</div>
+
+<div class="input-div two ">
+<div class="login-i">
+<i class="fas fa-lock"></i>
+</div>
+<div>
+<h5>NewPassword</h5>
+<input type="password" class="login-input" name="newpass">
+</div> 
+</div>
+<div style="display: flex;">
+
+<input type="submit" class="settings-btn" value="Save" />
+<input type="reset" class="settings-btn" value="Reset" />
+</div>
+
+
+</form>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</section>
+
+
+</body>

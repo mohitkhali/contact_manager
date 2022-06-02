@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+
+<section>
+<div class="llost">
+<img src="/images/llost.svg" alt="" />
+</div>
+<div class="card up-card">
+<form action="#" th:object="${contact}" 
+enctype="multipart/form-data"
+method="POST"
+th:action="@{/user/process-update}" >
+ <div class="form-row">
+ <div class="profile1">
+<img     th:src="@{'/images/'+${contact.image}}" alt=""></div>
+<h2>Update contacts</h2>
+    <div class="col-md-10 sm-6 mb-3">
+     <input type="hidden" th:value="${contact.cId}" name="cId" />
+      <label for="validationServer03 " class="mb-2" >Name</label>
+      <input type="text" class="form-control" required   th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}"   th:value="${contact.name}"       id="name" placeholder="Enter Name" name="name"/>
+      <div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}" id="nameerror">
+      
+      </div>
+      </div>
+      
+       <div class="col-md-10 mb-3">
+      <label for="validationServer03"  class="mb-2">secondName</label> <input type="text" class="form-control" 
+							required
+							th:classappend="${#fields.hasErrors('secondName') ? 'is-invalid' : ''}"
+							th:value="${contact.secondName}" id="secondName" placeholder="Enter Nick Name"
+							name="secondName">
+						 <div class="invalid-feedback " th:each="e : ${#fields.errors('secondName')}" th:text="${e}" >
+       
+      </div>
+      </div>
+      
+      
+         <div class="col-md-10 mb-3">
+      <label for="validationServer03"  class="mb-2">Email</label> <input type="email" class="form-control" 
+							required
+							pattern="^[a-zA-Z0-9]+@gmail\.com$"
+							th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"
+							th:value="${contact.email}" id="email" placeholder="Enter Nick Name"
+							name="email">
+						 <div class="invalid-feedback " th:each="e : ${#fields.errors('email')}" th:text="${e}" id="mailerror">
+       
+      </div>
+      </div>
+      
+      
+      
+      
+       
+         <div class="col-md-10 mb-3">
+      <label for="validationServer03"  class="mb-2">phone</label> <input type="number" class="form-control" 
+							required
+							th:classappend="${#fields.hasErrors('phone') ? 'is-invalid' : ''}"
+							th:value="${contact.phone}" id="email" placeholder="Enter phone Number"
+							 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+							  maxlength="10"
+							name="phone">
+						 <div class="invalid-feedback" th:each="e : ${#fields.errors('phone')}" th:text="${e}" id="phoneerror">
+       
+      </div>
+      </div>
+      
+      
+      
+      
+       
+         <div class="col-md-10 mb-3">
+      <label for="validationServer03"  class="mb-2">Work</label> <input type="text" class="form-control" 
+							required
+							
+							th:value="${contact.work}" id="email" placeholder="Enter work"
+						
+						
+							name="work">
+						
+      </div>
+      
+      
+      
+      
+        
+         <div class="col-md-10 mb-3">
+      <label for="validationServer03"  class="mb-2">About</label> <input type="text" class="form-control" 
+							required
+					
+							th:value="${contact.description}" id="email" placeholder="Enter About yourself"
+						
+						
+							name="description">
+						
+      </div>
+      
+      
+      
+      
+<div class="input-file">
+<input type="file" id="file" name="profile_image"    accept=".png, .jpg, .jpeg"/>
+<button type="submit" class="submit">Update Contact</button>
+
+</div>
+      
+      
+      
+      
+      
+   </div>
+</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+setTimeout(function() {
+    $('#nameerror,#mailerror,#phoneerror,#alert').fadeOut('fast');
+},3000);
+</script>
+
+
+
+
+
+</section>
+
+
+</body>

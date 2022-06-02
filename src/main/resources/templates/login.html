@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+
+<body> 
+<section >
+
+<img src="/images/wave.png" alt="" class="wave"/>
+<div class="container" style="	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns:repeat(2,1fr);
+	grid-gap:7rem;
+	padding: 0 2rem;">
+<div class="login-img">
+<img src="/images/reading.svg" alt="" class="Lgman" />
+</div>
+<div class="login-container">
+<form th:action="@{/dologin}" class="login-form" method="post">
+<img src="/images/profile.svg" alt="" class="login-avtar" />
+<h2>welcome</h2>
+<div th:if="${param.error}" class="alert alert-danger message1" id="message1">
+Invalid username or password!!
+</div>
+<div class="input-div one ">
+<div class="login-i">
+<i class="fas fa-user"></i>
+</div>
+<div>
+<h5>Username</h5>
+<input type="text" class="login-input " name="username"/>
+</div>
+</div>
+
+<div class="input-div two ">
+<div class="login-i">
+<i class="fas fa-lock"></i>
+</div>
+<div>
+<h5>Password</h5>
+<input type="password" class="login-input" name="password">
+</div> 
+</div>
+
+<a href="#" class="login-a">Forgot Password?</a>
+<a href="/signup" class="login-a">Don't Have an account?</a>
+<input type="submit" class="login-btn" value="Login" />
+
+
+</form>
+
+</div>
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+setTimeout(function() {
+    $('#message1').fadeOut('fast');
+},3000);
+</script>
+</section>
+
+
+</body>
+</html>
